@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Викторина — выбери участника</title>
-  <meta name="description" content="Выбери класс, затем участника викторины.">
+  <title>Викторина — голосование</title>
+  <meta name="description" content="Проголосуй за участника и смотри топ.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
       <section class="hero" id="picker">
         <p class="eyebrow">По классам</p>
         <h1>Выбери класс,<br>потом человека.</h1>
-        <p class="lead">13 участников. Нажми на свой класс — появятся люди, из которых можно выбрать.</p>
+        <p class="lead" id="lead">Нажми на свой класс, выбери человека и проголосуй. После голоса откроется топ.</p>
 
         <div class="classes" id="classes" role="listbox" aria-label="Классы"></div>
 
@@ -35,11 +35,19 @@
       </section>
 
       <section class="result" id="result" hidden>
-        <p class="eyebrow">Выбор сохранён</p>
+        <p class="eyebrow">Голос учтён</p>
         <p class="result-kicker">Ты выбрал</p>
         <h2 class="result-name" id="resultName"></h2>
         <p class="result-class" id="resultClass"></p>
-        <button class="ghost" id="changeBtn" type="button">Изменить выбор</button>
+        <div class="board">
+          <div class="people-head">
+            <h2>Топ</h2>
+            <p id="boardTotal"></p>
+          </div>
+          <p class="vote-error" id="resultError" hidden></p>
+          <ol class="top" id="topList"></ol>
+        </div>
+        <button class="ghost" id="changeBtn" type="button">Изменить голос</button>
       </section>
     </main>
 
@@ -47,8 +55,9 @@
       <div class="dock-copy">
         <span class="dock-label">Выбор</span>
         <strong id="dockName">Никто не выбран</strong>
+        <p class="vote-error" id="voteError" hidden></p>
       </div>
-      <button class="confirm" id="confirmBtn" type="button" disabled>Подтвердить</button>
+      <button class="confirm" id="confirmBtn" type="button" disabled>Проголосовать</button>
     </div>
   </div>
   <script src="app.js"></script>

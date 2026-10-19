@@ -299,6 +299,72 @@ h1 {
   text-underline-offset: 4px;
 }
 
+.board {
+  margin-top: 36px;
+}
+
+.top {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.rank {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px 46px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px 16px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--card);
+  border: 1px solid transparent;
+}
+
+.rank.is-mine {
+  background: #2a2614;
+  border-color: rgba(255, 225, 74, 0.7);
+}
+
+.rank-n {
+  font-family: Unbounded, Manrope, sans-serif;
+  font-size: 18px;
+  letter-spacing: -0.04em;
+}
+
+.rank-copy { min-width: 0; }
+
+.rank-class {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.rank-votes {
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.rank-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--yellow);
+}
+
+.vote-error {
+  margin: 8px 0 0;
+  color: #ffb4a2;
+  font-size: 14px;
+  font-weight: 700;
+}
+
 @media (max-width: 720px) {
   .classes { grid-template-columns: repeat(3, 1fr); }
   .class-btn { min-height: 74px; font-size: 22px; }
