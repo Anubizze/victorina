@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Викторина — выбери участника</title>
+  <meta name="description" content="Выбери класс, затем участника викторины.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="stage">
+    <header class="top">
+      <div class="brand">Викторина</div>
+      <div class="step" id="stepLabel">Шаг 1 из 2</div>
+    </header>
+
+    <main>
+      <section class="hero" id="picker">
+        <p class="eyebrow">По классам</p>
+        <h1>Выбери класс,<br>потом человека.</h1>
+        <p class="lead">13 участников. Нажми на свой класс — появятся люди, из которых можно выбрать.</p>
+
+        <div class="classes" id="classes" role="listbox" aria-label="Классы"></div>
+
+        <section class="people-wrap" id="peopleWrap" hidden>
+          <div class="people-head">
+            <h2 id="peopleTitle">Участники</h2>
+            <p id="peopleCount"></p>
+          </div>
+          <div class="people" id="people" role="listbox" aria-label="Участники класса"></div>
+        </section>
+      </section>
+
+      <section class="result" id="result" hidden>
+        <p class="eyebrow">Выбор сохранён</p>
+        <p class="result-kicker">Ты выбрал</p>
+        <h2 class="result-name" id="resultName"></h2>
+        <p class="result-class" id="resultClass"></p>
+        <button class="ghost" id="changeBtn" type="button">Изменить выбор</button>
+      </section>
+    </main>
+
+    <div class="dock" id="dock" hidden>
+      <div class="dock-copy">
+        <span class="dock-label">Выбор</span>
+        <strong id="dockName">Никто не выбран</strong>
+      </div>
+      <button class="confirm" id="confirmBtn" type="button" disabled>Подтвердить</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
